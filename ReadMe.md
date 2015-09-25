@@ -3,7 +3,7 @@
 For this project, you will be creating a simple HashTable object. 
 
 ##API - Version 0
-This version of HashTable will do a simple put using an object's hashcode. It does not use separate key and value objects. Create the appropriate private fields.
+This version of HashTable will do a simple put using an object's hashcode. It does not use separate key and value objects. Create the appropriate private fields and set a default load factor.
 
 ###HashTable()
 Default constructor. Initializes to capacity 100.
