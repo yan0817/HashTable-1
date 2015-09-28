@@ -5,12 +5,13 @@ import java.lang.Math;
 
 public class HashTable
 {
-	private int capacity = .6;
+	private double capacity = .6;
 	private int size;
 	private Object[] arr;
 	private int numOfOccupiedSpaces = 0;
+	private int quadProb = 1;
 	
-	public HashTable
+	public HashTable()
 	{
 		arr = new Object[100];
 		size = 100;
@@ -23,16 +24,18 @@ public class HashTable
 		int total = 0;
 		while (i < sObj.length())
 		{
-			char a = sObj.charAt(i); // Tallying the total of all the ascii values if the character in the Objects memory address
-			total += (int)a	
+			char a = sObj.charAt(i);
+			total += (int)a;	
 		}
-		int spot = total % size
-		while(arr[spot] != 0)
+		int spot = total % size;
+		while(arr[spot] != null)
 		{
-			spot++; //Checking whether the spot is occupied and if it is moving it to the nearest unoccupied space
+			spot=spot*2;
+			quadProb=quadProb*2;
 		}
+		spot = spot % size;
 		arr[spot] = total;
-		numOfOccupiedSpaces++; //keeping track of the number of occupied spaces so that capacity can be checked
+		numOfOccupiedSpaces++;
 		if ((numOfOccupiedSpaces/size) >= .6)
 			rehash(); 
 	}
@@ -43,7 +46,7 @@ public class HashTable
 		int i = 0;
 		while (i < arr.length)
 		{
-			arrCopy[i] = arr[i]; //Copying the values of the original array into the new larger array
+			arrCopy[i] = arr[i];
 		}
 		arr = arrCopy;
 	}
@@ -55,5 +58,16 @@ public class HashTable
 		{
 			strOfArr += arr[i].toString() + ", ";	
 		}
+		return strOfArr;
+	}
+	
+	public static void main(String [] args)
+	{
+		HashTable table = new HashTable();
+		table.put("Asbds");
+		table.put("hdjfsk");
+		table.put("jkrkjs");
+		table.put("dfsadsa");
+		table.toString();
 	}
 }
