@@ -24,14 +24,14 @@ public class HashTable
 		int total = 0;
 		while (i < sObj.length())
 		{
-			char a = sObj.charAt(i);
+			char a = sObj.charAt(i); // getting total of the ascii values of the memory address of the object 
 			total += (int)a;	
 		}
 		int spot = total % size;
 		while(arr[spot] != null)
 		{
 			spot=spot*2;
-			quadProb=quadProb*2;
+			quadProb=quadProb*2; //Finding spot if spot is already taken 
 		}
 		spot = spot % size;
 		arr[spot] = total;
