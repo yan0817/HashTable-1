@@ -1,6 +1,11 @@
 #Hash Table Project
 
-For this project, you will be creating a simple HashTable object. 
+For this project, you will be creating a simple HashTable object.
+
+##Commit Schedule
+Version 0: 10/01/15 8am </br>
+Version 1 draft: 10/05/15 8am </br>
+Version 1 final: 10/07/15 8am 
 
 ##HashTable\<K,V> API - Version 1
 This version of HashTable builds on Version 0 and adds generics as well as a few additional methods.
